@@ -290,7 +290,7 @@ const EnhancedProjectsPage = () => {
 
   return (
     <div className="bg-black text-white font-mono tracking-wide min-h-screen">
-      <div className="w-full max-w-4xl mx-auto px-3 py-6 pt-16">
+      <div className="w-full max-w-4xl mx-auto container-padding py-6 pt-16">
         <motion.header 
           className="mb-12"
           initial={{ opacity: 0, y: -20 }}

@@ -5,18 +5,12 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --background-color: #1A1A1A;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--background-color);
   font-family: var(--font-inter);
 }
 
@@ -146,6 +140,11 @@ body {
 
 .delay-500 {
   animation-delay: 500ms;
+}
+
+/* Global container with responsive padding */
+.container-padding {
+  @apply px-[22px] sm:px-[42px] lg:px-[69px];
 }
 
 /* Custom component styles */

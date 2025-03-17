@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import AnimatedLayout from './components/AnimatedLayout';
+import NavBar from "./components/NavBar";
 
 // Load fonts
 const inter = Inter({ 
@@ -23,16 +24,22 @@ export const metadata: Metadata = {
   description: 'Custom web development solutions that make sense for your business',
 };
 
-// Custom styles to add to globals.css
+// RootLayout Component with Global Styles and Navigation
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="bg-black text-white min-h-screen">
-        {children}
+      <body className="bg-black text-white min-h-screen flex flex-col">
+        {/* Navbar Component */}
+        <NavBar />
+        
+        {/* Main Content Wrapped in Animated Layout */}
+        <AnimatedLayout>
+          {children}
+        </AnimatedLayout>
       </body>
     </html>
   );
